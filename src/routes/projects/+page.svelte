@@ -2,6 +2,22 @@
 <script>
   // Hardcoded project data - easy to customize later
   const projects = [
+    {
+      name: "RAG CLI",
+      description: "A command-line interface tool for Retrieval Augmented Generation (RAG). This CLI tool provides an efficient way to implement and work with RAG systems, making it easier to build AI applications that combine retrieval and generation capabilities.",
+      technologies: ["Python", "CLI", "RAG", "AI"],
+      imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      githubUrl: "https://github.com/git-jeewon/rag-cli",
+      demoUrl: null
+    },
+    {
+      name: "Borrd",
+      description: "A minimalist markdown to blog website that transforms your markdown content into beautiful blog posts. Features live preview, image/audio/video upload support, Supabase integration, and customizable styling with frontmatter. Perfect for content creators who want a clean, simple blogging platform.",
+      technologies: ["TypeScript", "Next.js", "Supabase", "Tailwind CSS", "Markdown"],
+      imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      githubUrl: "https://github.com/git-jeewon/borrd",
+      demoUrl: "https://borrd.me"
+    }
   ];
 </script>
 
