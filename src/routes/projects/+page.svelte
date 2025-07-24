@@ -14,7 +14,8 @@
       name: "Borrd",
       description: "A minimalist markdown to blog website that transforms your markdown content into beautiful blog posts. Features live preview, image/audio/video upload support, Supabase integration, and customizable styling with frontmatter. Perfect for content creators who want a clean, simple blogging platform.",
       technologies: ["TypeScript", "Next.js", "Supabase", "Tailwind CSS", "Markdown"],
-      imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      imageUrl: null,
+      previewUrl: "https://borrd.me",
       githubUrl: "https://github.com/git-jeewon/borrd",
       demoUrl: "https://borrd.me"
     }
@@ -48,14 +49,28 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {#each projects as project}
         <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <!-- Project Image -->
-          <div class="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-            <img 
-              src={project.imageUrl} 
-              alt={project.name}
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
+          <!-- Project Image/Preview -->
+          <div class="aspect-video flex items-center justify-center overflow-hidden">
+            {#if project.previewUrl}
+              <iframe 
+                src={project.previewUrl} 
+                title="{project.name} live preview"
+                class="w-full h-full border-0"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+              ></iframe>
+            {:else if project.imageUrl}
+              <img 
+                src={project.imageUrl} 
+                alt={project.name}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            {:else}
+              <div class="text-white text-lg font-semibold">
+                {project.name}
+              </div>
+            {/if}
           </div>
           
           <!-- Project Content -->
